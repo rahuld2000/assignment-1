@@ -32,7 +32,7 @@ function Home() {
   return (
     <div className='bg-[#DEE7F1] w-full min-h-screen '>
 
-    <div className='p-4 px-8 m-5 rounded-lg shadow-md'>
+    <div className='p-3 px-8 m-5 rounded-lg shadow-md'>
     <form className='flex'>  
     <input className='p-2 w-96 rounded-md' placeholder='Search Cars' onChange={(e)=>{setFind(e.target.value.toLowerCase())}} type="text" />
     <p className='relative right-8 top-1 text-xl text-slate-700'>  <i class="ri-search-line"></i></p>
@@ -80,7 +80,9 @@ function Home() {
     
     <div className=' p-4 shadow-md m-5 rounded-xl'>
     <>
-    
+    <div className='flex felx-row justify-between items-center'>
+    <p> {itemOffset+itemsPerPage} of {carData.length}</p>
+   
       <ReactPaginate
         breakLabel="..."
         nextLabel="->"
@@ -95,6 +97,7 @@ function Home() {
         nextLinkClassName='page-num'
         activeLinkClassName='active'
       />
+      </div>
     </>
     </div>
     </div>
